@@ -175,6 +175,10 @@ func LoadConfiguration(configPath string) (*Config, error) {
 				log.Printf("[config.LoadConfiguration] Error walking path=%s: %s", path, err)
 				return err
 			}
+			if strings.Contains(path, "..") {
+				log.Printf("[config.LoadConfiguration] Ignore configuration from %s", path)
+				return nil
+			}
 			log.Printf("[config.LoadConfiguration] Reading configuration from %s", path)
 			data, err := os.ReadFile(path)
 			if err != nil {
