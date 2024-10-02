@@ -404,6 +404,7 @@ func validateAlertingConfig(alertingConfig *alerting.Config, endpoints []*endpoi
 		alert.TypeEmail,
 		alert.TypeGitHub,
 		alert.TypeGitLab,
+		alert.TypeGitea,
 		alert.TypeGoogleChat,
 		alert.TypeGotify,
 		alert.TypeJetBrainsSpace,
@@ -418,6 +419,7 @@ func validateAlertingConfig(alertingConfig *alerting.Config, endpoints []*endpoi
 		alert.TypeTeams,
 		alert.TypeTelegram,
 		alert.TypeTwilio,
+		alert.TypeZulip,
 	}
 	var validProviders, invalidProviders []alert.Type
 	for _, alertType := range alertTypes {
